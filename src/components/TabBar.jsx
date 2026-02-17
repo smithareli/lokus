@@ -28,16 +28,6 @@ export default function TabBar({
   const handleTabDragEnd = (e) => {
     onDragEnd && onDragEnd();
   };
-  const handleTabSwipeLeft = (tab) => {
-    if (isMobile) {
-      onSwipedLeft && onSwipedLeft(groupId);
-      onTabClose && onTabClose(tab.id);
-    }};
-  const handleTabSwipeRight = (tab) => {
-    if (isMobile) {
-      onSwipedRight && onSwipedRight(groupId);
-      onTabClose && onTabClose(tab.id);
-    }};
   
   
 
