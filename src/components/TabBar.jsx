@@ -28,31 +28,8 @@ export default function TabBar({
   const handleTabDragEnd = (e) => {
     onDragEnd && onDragEnd();
   };
-  const handleTabSwipeLeft = (tab) => {
-    if (isMobile) {
-      onSwipedLeft && onSwipedLeft(groupId);
-      onTabClose && onTabClose(tab.id);
-    }};
-  const handleTabSwipeRight = (tab) => {
-    if (isMobile) {
-      onSwipedRight && onSwipedRight(groupId);
-      onTabClose && onTabClose(tab.id);
-    }};
-  {tabs.map((tab) => {
-    const swipeHandlers = useSwipeable({
-      onSwipedLeft: () => handleTabSwipeLeft(tab),
-      onSwipedRight: () => handleTabSwipeRight(tab),
-      delta:50,
-      velocity:0.3,
-      preventScrollOnSwipe:true,
-      trackMouse: false, 
-    });
-    return (
-      <div key={tab.id} {...swipeHandlers}>
-        {tab.title}
-      </div>
-    );
-  })}
+  
+  
 
   if (!tabs || tabs.length === 0) {
     return (
